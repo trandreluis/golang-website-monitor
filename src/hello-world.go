@@ -2,19 +2,23 @@ package main
 
 import (
 	"fmt"
+	"net/http"
 	"os"
 )
 
 func main() {
 
-	exibeIntroducao()
-	exbibeMenu()
+	// exibeIntroducao()
+	// exbibeMenu()
+
+	nome, idade := devolveNome()
+	fmt.Println(nome, idade)
 
 	comando := leComando()
 
 	switch comando {
 	case 1:
-		fmt.Println("Monitorando...")
+		iniciarMonitoramento()
 	case 2:
 		fmt.Println("Exibindo logs")
 	case 0:
@@ -25,6 +29,13 @@ func main() {
 		os.Exit(-1)
 	}
 
+}
+
+func devolveNome() (string, int) {
+	nome := "André"
+	idade := 25
+
+	return nome, idade
 }
 
 func exibeIntroducao() {
@@ -46,4 +57,13 @@ func leComando() int {
 	fmt.Println("O comando escolhido foi", comandoLido)
 
 	return comandoLido
+}
+
+func iniciarMonitoramento() {
+	fmt.Println("Monitorando...")
+	site := "https://www.google.com.br"
+
+	response, erro := http.Get(site)
+
+	fmt.Println(response, erro)
 }
