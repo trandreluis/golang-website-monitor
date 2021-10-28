@@ -4,20 +4,16 @@ import (
 	"fmt"
 	"net/http"
 	"os"
-	"reflect"
+	"time"
 )
 
-func main() {
-	exibiNomes()
+const monitoramentos = 3
+const delayEmSegundos = 5
 
-	var sites [4]string
-	sites[0] = "https://www.google.com"
-	sites[1] = "https://www.stackoverflow.com"
-	sites[2] = "https://www.baeldung.com"
-	fmt.Println(sites, "Tipo:", reflect.TypeOf(sites))
-	// exibeIntroducao()
+func main() {
+	exibeIntroducao()
 	for {
-		// exbibeMenu()
+		exbibeMenu()
 
 		comando := leComando()
 
@@ -48,6 +44,7 @@ func exibeIntroducao() {
 	versao := 1.1
 	fmt.Println("Olá, sr.", nome)
 	fmt.Println("Este programa está na versão", versao)
+	fmt.Println()
 }
 
 func exbibeMenu() {
@@ -60,6 +57,7 @@ func leComando() int {
 	var comandoLido int
 	fmt.Scan(&comandoLido)
 	fmt.Println("O comando escolhido foi", comandoLido)
+	fmt.Println()
 
 	return comandoLido
 }
@@ -67,12 +65,20 @@ func leComando() int {
 func iniciarMonitoramento() {
 	fmt.Println("Monitorando...")
 
-	var sites [4]string
-	sites[0] = "https://www.google.com"
-	sites[1] = "https://www.stackoverflow.com"
-	sites[2] = "https://www.baeldung.com"
+	sites := []string{"https://www.google.com/", "https://www.stackoverflow.com/", "https://www.baeldung.com/", "https://random-status-code.herokuapp.com/"}
 
-	site := "https://random-status-code.herokuapp.com"
+	for i := 0; i < monitoramentos; i++ {
+		for i, site := range sites {
+			fmt.Println("Testando site", i, ":", site)
+			testaSite(site)
+		}
+		fmt.Println()
+		time.Sleep(delayEmSegundos * time.Second)
+		fmt.Println()
+	}
+}
+
+func testaSite(site string) {
 	response, _ := http.Get(site)
 
 	if response.StatusCode == 200 {
@@ -80,17 +86,4 @@ func iniciarMonitoramento() {
 	} else {
 		fmt.Println("Site:", site, "está com problemas. Http Status Code:", response.StatusCode)
 	}
-}
-
-func exibiNomes() {
-	nomes := []string{"André", "Fulano", "Sicrano"}
-	fmt.Println(nomes, "Tipo", reflect.TypeOf(nomes))
-	fmt.Println("O meu slice tem", len(nomes), "itens")
-	fmt.Println("O meu slice tem capacidade para", cap(nomes), "itens")
-
-	nomes = append(nomes, "Gomes")
-
-	fmt.Println(nomes, "Tipo", reflect.TypeOf(nomes))
-	fmt.Println("O meu slice tem", len(nomes), "itens")
-	fmt.Println("O meu slice tem capacidade para", cap(nomes), "itens")
 }
