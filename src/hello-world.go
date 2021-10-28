@@ -16,13 +16,16 @@ func main() {
 
 	var comando int
 	fmt.Scan(&comando)
-	fmt.Println("O endereço da minha variável comando é", &comando)
 
-	if comando == 1 {
-		fmt.Println("A opção 1 foi escolhida")
-	} else if comando == 2 {
-		fmt.Println("A opção 2 foi escolhida")
-	} else if comando == 0 {
-		fmt.Println("A opção 0 foi escolhida")
+	switch comando {
+	case 1:
+		fmt.Println("Monitorando...")
+	case 2:
+		fmt.Println("Exibindo logs")
+	case 0:
+		fmt.Println("Saindo do programa")
+	default:
+		fmt.Println("Comando desconhecido")
 	}
+
 }
