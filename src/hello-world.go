@@ -7,28 +7,25 @@ import (
 )
 
 func main() {
+	exibeIntroducao()
+	for {
+		exbibeMenu()
 
-	// exibeIntroducao()
-	// exbibeMenu()
+		comando := leComando()
 
-	nome, idade := devolveNome()
-	fmt.Println(nome, idade)
-
-	comando := leComando()
-
-	switch comando {
-	case 1:
-		iniciarMonitoramento()
-	case 2:
-		fmt.Println("Exibindo logs")
-	case 0:
-		fmt.Println("Saindo do programa")
-		os.Exit(0)
-	default:
-		fmt.Println("Comando desconhecido")
-		os.Exit(-1)
+		switch comando {
+		case 1:
+			iniciarMonitoramento()
+		case 2:
+			fmt.Println("Exibindo logs")
+		case 0:
+			fmt.Println("Saindo do programa")
+			os.Exit(0)
+		default:
+			fmt.Println("Comando desconhecido")
+			os.Exit(-1)
+		}
 	}
-
 }
 
 func devolveNome() (string, int) {
@@ -63,7 +60,14 @@ func iniciarMonitoramento() {
 	fmt.Println("Monitorando...")
 	site := "https://www.google.com.br"
 
-	response, erro := http.Get(site)
+	siteRandomStatusCode := "https://random-status-code.herokuapp.com"
 
-	fmt.Println(response, erro)
+	// response, _ := http.Get(site)
+	response, _ := http.Get(siteRandomStatusCode)
+
+	if response.StatusCode == 200 {
+		fmt.Println("Site:", site, "foi carregado com sucesso")
+	} else {
+		fmt.Println("Site:", site, "está com problemas. Http Status Code:", response.StatusCode)
+	}
 }
