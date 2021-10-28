@@ -4,12 +4,20 @@ import (
 	"fmt"
 	"net/http"
 	"os"
+	"reflect"
 )
 
 func main() {
-	exibeIntroducao()
+	exibiNomes()
+
+	var sites [4]string
+	sites[0] = "https://www.google.com"
+	sites[1] = "https://www.stackoverflow.com"
+	sites[2] = "https://www.baeldung.com"
+	fmt.Println(sites, "Tipo:", reflect.TypeOf(sites))
+	// exibeIntroducao()
 	for {
-		exbibeMenu()
+		// exbibeMenu()
 
 		comando := leComando()
 
@@ -58,16 +66,31 @@ func leComando() int {
 
 func iniciarMonitoramento() {
 	fmt.Println("Monitorando...")
-	site := "https://www.google.com.br"
 
-	siteRandomStatusCode := "https://random-status-code.herokuapp.com"
+	var sites [4]string
+	sites[0] = "https://www.google.com"
+	sites[1] = "https://www.stackoverflow.com"
+	sites[2] = "https://www.baeldung.com"
 
-	// response, _ := http.Get(site)
-	response, _ := http.Get(siteRandomStatusCode)
+	site := "https://random-status-code.herokuapp.com"
+	response, _ := http.Get(site)
 
 	if response.StatusCode == 200 {
 		fmt.Println("Site:", site, "foi carregado com sucesso")
 	} else {
 		fmt.Println("Site:", site, "está com problemas. Http Status Code:", response.StatusCode)
 	}
+}
+
+func exibiNomes() {
+	nomes := []string{"André", "Fulano", "Sicrano"}
+	fmt.Println(nomes, "Tipo", reflect.TypeOf(nomes))
+	fmt.Println("O meu slice tem", len(nomes), "itens")
+	fmt.Println("O meu slice tem capacidade para", cap(nomes), "itens")
+
+	nomes = append(nomes, "Gomes")
+
+	fmt.Println(nomes, "Tipo", reflect.TypeOf(nomes))
+	fmt.Println("O meu slice tem", len(nomes), "itens")
+	fmt.Println("O meu slice tem capacidade para", cap(nomes), "itens")
 }
