@@ -14,6 +14,8 @@ import (
 
 const monitoramentos = 3
 const delayEmSegundos = 5
+const sitesFile = "sites.txt"
+const logFile = "log.txt"
 
 func main() {
 	exibeIntroducao()
@@ -98,7 +100,7 @@ func testaSite(site string) {
 }
 
 func leSitesDoArquivo() []string {
-	arquivo, erroAoAbrir := os.Open("sites.txt")
+	arquivo, erroAoAbrir := os.Open(sitesFile)
 
 	if erroAoAbrir != nil {
 		fmt.Println("Ocorreu um erro ao abrir o arquivo:", erroAoAbrir)
@@ -134,7 +136,7 @@ func registraLog(site string, status bool) {
 }
 
 func imprimeLogs() {
-	arquivo, erroAoAbrir := ioutil.ReadFile("log.txt")
+	arquivo, erroAoAbrir := ioutil.ReadFile(logFile)
 
 	if erroAoAbrir != nil {
 		fmt.Println("Ocorreu um erro ao abrir o arquivo:", erroAoAbrir)
