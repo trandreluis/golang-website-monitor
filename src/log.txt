@@ -1,0 +1,17 @@
+site-falso.com- online:true
+site-falso.com- online:false
+https://www.google.com/- online:true
+https://www.stackoverflow.com/- online:true
+https://www.baeldung.com/- online:false
+https://random-status-code.herokuapp.com/- online:true
+https://www.github.com/- online:true
+https://www.google.com/- online:true
+https://www.stackoverflow.com/- online:true
+https://www.baeldung.com/- online:false
+https://random-status-code.herokuapp.com/- online:false
+https://www.github.com/- online:true
+https://www.google.com/- online:true
+https://www.stackoverflow.com/- online:true
+https://www.baeldung.com/- online:false
+https://random-status-code.herokuapp.com/- online:false
+https://www.github.com/- online:true
