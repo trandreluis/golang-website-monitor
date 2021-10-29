@@ -1,17 +1,30 @@
-site-falso.com- online:true
-site-falso.com- online:false
-https://www.google.com/- online:true
-https://www.stackoverflow.com/- online:true
-https://www.baeldung.com/- online:false
-https://random-status-code.herokuapp.com/- online:true
-https://www.github.com/- online:true
-https://www.google.com/- online:true
-https://www.stackoverflow.com/- online:true
-https://www.baeldung.com/- online:false
-https://random-status-code.herokuapp.com/- online:false
-https://www.github.com/- online:true
-https://www.google.com/- online:true
-https://www.stackoverflow.com/- online:true
-https://www.baeldung.com/- online:false
-https://random-status-code.herokuapp.com/- online:false
-https://www.github.com/- online:true
+28/10/2021 22:25:27 - https://www.google.com/- online: true
+28/10/2021 22:25:28 - https://www.stackoverflow.com/- online: true
+28/10/2021 22:25:28 - https://www.baeldung.com/- online: false
+28/10/2021 22:25:29 - https://random-status-code.herokuapp.com/- online: false
+28/10/2021 22:25:29 - https://www.github.com/- online: true
+28/10/2021 22:25:35 - https://www.google.com/- online: true
+28/10/2021 22:25:35 - https://www.stackoverflow.com/- online: true
+28/10/2021 22:25:35 - https://www.baeldung.com/- online: false
+28/10/2021 22:25:35 - https://random-status-code.herokuapp.com/- online: false
+28/10/2021 22:25:36 - https://www.github.com/- online: true
+28/10/2021 22:25:41 - https://www.google.com/- online: true
+28/10/2021 22:25:41 - https://www.stackoverflow.com/- online: true
+28/10/2021 22:25:41 - https://www.baeldung.com/- online: false
+28/10/2021 22:25:42 - https://random-status-code.herokuapp.com/- online: false
+28/10/2021 22:25:42 - https://www.github.com/- online: true
+28/10/2021 22:30:08 - https://www.google.com/- online: true
+28/10/2021 22:30:08 - https://www.stackoverflow.com/- online: true
+28/10/2021 22:30:09 - https://www.baeldung.com/- online: false
+28/10/2021 22:30:09 - https://random-status-code.herokuapp.com/- online: true
+28/10/2021 22:30:10 - https://www.github.com/- online: true
+28/10/2021 22:30:15 - https://www.google.com/- online: true
+28/10/2021 22:30:15 - https://www.stackoverflow.com/- online: true
+28/10/2021 22:30:15 - https://www.baeldung.com/- online: false
+28/10/2021 22:30:16 - https://random-status-code.herokuapp.com/- online: false
+28/10/2021 22:30:16 - https://www.github.com/- online: true
+28/10/2021 22:30:21 - https://www.google.com/- online: true
+28/10/2021 22:30:22 - https://www.stackoverflow.com/- online: true
+28/10/2021 22:30:22 - https://www.baeldung.com/- online: false
+28/10/2021 22:30:22 - https://random-status-code.herokuapp.com/- online: false
+28/10/2021 22:30:23 - https://www.github.com/- online: true
